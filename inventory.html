@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>คลังข้อมูลของฉัน — จ่าใหญ่</title>
+  <meta name="description" content="รายการข้อมูลส่วนบุคคลของคุณทั้งหมด ใครถือ ส่งต่อไปไหน และเสี่ยงแค่ไหน">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23020C2C'/%3E%3Cpath d='M12 3l7 2.6v5.6c0 4.8-3.1 8-7 9.8-3.9-1.8-7-5-7-9.8V5.6z' fill='%23F7D047'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <section class="section wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Data Inventory / คลังข้อมูล</p>
+          <h2>ข้อมูลของคุณทั้งหมดที่อยู่ในมือคนอื่น</h2>
+        </div>
+      </div>
+      <div class="bubble-row reveal" style="margin-bottom:22px">
+        <div class="bob" id="inv-mascot"></div>
+        <div>
+          <div class="bubble">
+            <span class="who">จ่าใหญ่ · หัวหน้าสายตรวจข้อมูล</span>
+            <span id="inv-bubble-text">ผมไล่ส่องมาให้หมดแล้วว่าข้อมูลแต่ละชิ้นอยู่กับใคร แตะที่รายการเพื่อดูเส้นทางว่ามันถูกส่งต่อไปไหนบ้าง</span>
+          </div>
+          <div class="bubble-tail"></div>
+        </div>
+      </div>
+      <div class="inv-toolbar" id="filters" role="group" aria-label="กรองตามระดับความเสี่ยง"></div>
+      <div class="inv-list" id="inv-list"></div>
+    </section>
+  </main>
+  <script type="module" src="js/inventory.js"></script>
+</body>
+</html>
