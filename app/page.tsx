@@ -59,7 +59,7 @@ export default function DashboardPage() {
               </div>
             </div>
             <div className="briefing-body">
-              <p className="eyebrow">รายงานสถานการณ์ / Status Report</p>
+              <p className="eyebrow">รายงานสถานการณ์</p>
               <h1>
                 {s ? (
                   <>
@@ -79,7 +79,7 @@ export default function DashboardPage() {
                     <span className={`chip ${tier}`}>ระดับความเสี่ยงรวม: {TIER[tier].label}</span>
                   </div>
                   <div className="bubble" style={{ marginTop: 18 }}>
-                    <span className="who">คำวินิจฉัยของจ่าใหญ่ / Verdict</span>
+                    <span className="who">คำวินิจฉัยของจ่าใหญ่</span>
                     <Verdict highCount={s.highCount} />
                   </div>
                 </>
@@ -115,7 +115,7 @@ export default function DashboardPage() {
         <Reveal>
           <div className="section-head">
             <div>
-              <p className="eyebrow">DSR Tracking / ติดตามคำขอ</p>
+              <p className="eyebrow">ติดตามคำขอ DSR</p>
               <h2>คำขอลบข้อมูลของคุณกำลังเดินทาง</h2>
             </div>
             <Link className="more" href="/requests">
@@ -140,7 +140,7 @@ export default function DashboardPage() {
         <Reveal>
           <div className="section-head">
             <div>
-              <p className="eyebrow">คำแนะนำจากจ่าใหญ่ / Recommended</p>
+              <p className="eyebrow">คำแนะนำจากจ่าใหญ่</p>
               <h2>รายการที่จ่าใหญ่อยากให้จัดการก่อน</h2>
             </div>
             <Link className="more" href="/inventory">
@@ -155,8 +155,11 @@ export default function DashboardPage() {
                 <article key={item.id} className="reco">
                   <JaYai pose={i % 2 ? 'magnify' : 'point'} alt="" />
                   <div>
-                    <div className="r-title">
-                      {item.dataType} <TierChip tier={item.tier} />
+                    <div className="r-title temp-flex">
+                      <div>
+                        {item.dataType}
+                      </div>
+                       <TierChip tier={item.tier} />
                     </div>
                     <div className="r-org">
                       ถือโดย {holderOf(item).name} · {holderOf(item).type}

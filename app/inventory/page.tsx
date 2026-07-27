@@ -45,7 +45,7 @@ export default function InventoryPage() {
       <Reveal>
         <div className="section-head">
           <div>
-            <p className="eyebrow">Data Inventory / คลังข้อมูล</p>
+            <p className="eyebrow">คลังข้อมูล</p>
             <h2>ข้อมูลของคุณทั้งหมดที่อยู่ในมือคนอื่น</h2>
           </div>
         </div>

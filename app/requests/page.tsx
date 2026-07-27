@@ -31,7 +31,7 @@ export default function RequestsPage() {
       <Reveal>
         <div className="section-head">
           <div>
-            <p className="eyebrow">DSR Tracking / ติดตามคำขอ</p>
+            <p className="eyebrow">ติดตามคำขอ DSR</p>
             <h2>คำขอลบข้อมูลทั้งหมดของคุณ</h2>
           </div>
         </div>

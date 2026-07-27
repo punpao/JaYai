@@ -24,7 +24,7 @@
 
   --font-display: 'Kanit', 'Space Grotesk', sans-serif;
   --font-body: 'Prompt', 'Inter', sans-serif;
-  --font-label: 'IBM Plex Mono', monospace;
+  --font-label: 'Kanit', 'Space Grotesk', sans-serif;
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --pix: polygon(
@@ -81,7 +81,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   align-items: center;
   gap: 8px;
 }
-.eyebrow::before { content: '_'; color: var(--gold); }
+.eyebrow::before { }
 
 /* ---------- nav ---------- */
 .nav {
@@ -592,6 +592,11 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 
 /* ---------- request history rows ---------- */
 .req-list { display: grid; gap: 14px; }
+
+.temp-flex { display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between; }
 
 /* ---------- empty states ---------- */
 .empty {

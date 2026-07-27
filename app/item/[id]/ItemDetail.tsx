@@ -83,7 +83,7 @@ export default function ItemDetail({ id }: { id: string }) {
 
           <Reveal delay={80}>
             <div className="card" style={{ marginTop: 18 }}>
-              <p className="eyebrow">Data Trail / เส้นทางของข้อมูล</p>
+              <p className="eyebrow">เส้นทางของข้อมูล</p>
               <h2 className="card-h2">ข้อมูลชิ้นนี้เดินทางไปไหนมาบ้าง</h2>
               <div className="flow">
                 {item.flow.map((f, i) => {
@@ -113,7 +113,7 @@ export default function ItemDetail({ id }: { id: string }) {
         <div className="analysis">
           <Reveal delay={140}>
             <div className="card">
-              <p className="eyebrow">AI Analysis / บทวิเคราะห์</p>
+              <p className="eyebrow">บทวิเคราะห์จากจ่าใหญ่</p>
               <div className="bubble-row" style={{ marginTop: 14 }}>
                 <JaYai pose="bulb" />
                 <Bubble who={`จ่าใหญ่วิเคราะห์ · Exposure Score ${item.score}/100`}>{item.risk}</Bubble>
