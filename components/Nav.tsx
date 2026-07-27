@@ -9,6 +9,7 @@ const LINKS = [
   { href: '/', label: 'แดชบอร์ด' },
   { href: '/inventory', label: 'คลังข้อมูลของฉัน' },
   { href: '/requests', label: 'คำขอลบข้อมูล', tag: 'DSR' },
+  { href: '/insights', label: 'เกร็ดน่ารู้' },
 ];
 
 export default function Nav() {
@@ -43,6 +44,14 @@ export default function Nav() {
               {tag && <span className="tag">{tag}</span>}
             </Link>
           ))}
+          <Link
+            href="/consent"
+            className="nav-cta"
+            aria-current={isActive('/consent') ? 'page' : undefined}
+          >
+            สาธิตความยินยอม
+            <span className="nav-cta-tag">BETA</span>
+          </Link>
         </nav>
       </div>
     </header>

@@ -25,14 +25,18 @@ npm run build      # static export → out/  (โฮสต์บนเว็บ�
 | คลังข้อมูล | `/inventory` | ข้อมูลทุกชิ้น: อะไร–ใครถือ–ถูกส่งต่อกี่ทอด พร้อมตัวกรองตามระดับความเสี่ยง |
 | รายละเอียด | `/item/[id]` | เส้นทางข้อมูล (Data Trail), บทวิเคราะห์ AI เสียงจ่าใหญ่ + Exposure Score, ปุ่ม 1-Tap Erasure, สถานะ DSR สด |
 | คำขอทั้งหมด | `/requests` | ประวัติคำขอแบบหน้า order history พร้อมแท็บสถานะ |
+| สาธิตความยินยอม | `/consent` | Privacy Notice Demo — อ่านประกาศจริงทีละข้อแบบการ์ดปัด (Tinder-style) ข้อความต้นฉบับไม่ตัดทอน + คำแปลจากจ่าใหญ่ + คะแนนความเสี่ยง, ข้อบังคับล็อกปฏิเสธ, การ์ดขูด (scratch card) 2 ใบ, หน้าสรุปผล |
+| เกร็ดน่ารู้ | `/insights` | Curiosity-gap cards — เกร็ดความเสี่ยงจริงจากประกาศ เปิดอ่านทีละชั้น (ไม่มีปุ่มยินยอมในหน้านี้) |
 
 ## Structure
 
 ```
-app/            หน้าเพจ (App Router) + globals.css
-components/     JaYai (มาสคอต), Icon, Nav, TrackerCard, Toaster, ui (chips/meter/stepper/SLA)
-lib/            data.ts (mock seed, typed) · store.ts (DSR simulation + hooks)
-public/poses/   สไปรต์จ่าใหญ่ 12 ท่า
+app/                หน้าเพจ (App Router) + globals.css
+components/         JaYai (มาสคอต), Icon, Nav, TrackerCard, Toaster, ui (chips/meter/stepper/SLA)
+components/consent/ SwipeDeck (การ์ดปัด + คีย์บอร์ด + สรุปผล), ScratchReveal (canvas ขูด)
+components/insights/CuriosityFeed (การ์ดเปิดทีละชั้น)
+lib/                data.ts (mock seed) · store.ts (DSR simulation) · notice.ts (ประกาศต้นฉบับ verbatim + เนื้อหาการ์ด)
+public/poses/       สไปรต์จ่าใหญ่ 12 ท่า
 ```
 
 ## Mock / Simulation
