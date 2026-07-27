@@ -1,13 +1,48 @@
 /* Mock seed data — fictional Thai organizations and the personal data they hold.
    This is a prototype: no real DSR API, no real companies. */
 
-export const TIER = {
+export type TierKey = 'high' | 'medium' | 'low';
+export type FlowKind = 'collect' | 'store' | 'share' | 'broker';
+export type IconName =
+  | 'phone' | 'cart' | 'idcard' | 'contacts' | 'pin' | 'health' | 'sim' | 'bed'
+  | 'profile' | 'mail' | 'building' | 'shield' | 'check' | 'send' | 'gear'
+  | 'arrow' | 'eye' | 'alert' | 'trash' | 'db';
+
+export interface Holder {
+  id: string;
+  name: string;
+  type: string;
+  en: string;
+}
+
+export interface FlowStep {
+  kind: FlowKind;
+  org: string;
+  label: string;
+  date: string;
+}
+
+export interface DataItem {
+  id: string;
+  dataType: string;
+  icon: IconName;
+  holder: string;
+  score: number;
+  tier: TierKey;
+  lastActivity: string;
+  risk: string;
+  recommended: boolean;
+  recommendReason?: string;
+  flow: FlowStep[];
+}
+
+export const TIER: Record<TierKey, { key: TierKey; label: string; color: string }> = {
   high: { key: 'high', label: 'เสี่ยงสูง', color: 'var(--risk-high)' },
   medium: { key: 'medium', label: 'เสี่ยงปานกลาง', color: 'var(--risk-med)' },
   low: { key: 'low', label: 'เสี่ยงต่ำ', color: 'var(--risk-low)' },
 };
 
-export const HOLDERS = {
+export const HOLDERS: Record<string, Holder> = {
   shopmalee: { id: 'shopmalee', name: 'ช้อปมาลี', type: 'อีคอมเมิร์ซ', en: 'ShopMalee' },
   findee: { id: 'findee', name: 'ฟินดี เงินกู้ด่วน', type: 'สินเชื่อออนไลน์', en: 'FinDee Loan' },
   songwai: { id: 'songwai', name: 'ส่งไว เดลิเวอรี่', type: 'ฟู้ดเดลิเวอรี่', en: 'SongWai Delivery' },
@@ -19,7 +54,7 @@ export const HOLDERS = {
 };
 
 /* flow step kinds: collect → store → share → broker */
-export const ITEMS = [
+export const ITEMS: DataItem[] = [
   {
     id: 'contacts-findee',
     dataType: 'รายชื่อผู้ติดต่อทั้งเครื่อง',
@@ -227,6 +262,6 @@ export const ITEMS = [
   },
 ];
 
-export const byId = (id) => ITEMS.find((i) => i.id === id);
-export const holderOf = (item) => HOLDERS[item.holder];
-export const tierOf = (item) => TIER[item.tier];
+export const byId = (id: string) => ITEMS.find((i) => i.id === id);
+export const holderOf = (item: DataItem) => HOLDERS[item.holder];
+export const tierOf = (item: DataItem) => TIER[item.tier];

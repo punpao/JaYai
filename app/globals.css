@@ -56,6 +56,9 @@ body {
 }
 
 img, svg { max-width: 100%; display: block; }
+
+/* mascot sprites: crisp pixel scaling, CSS width wins over intrinsic size */
+.jayai { height: auto; image-rendering: pixelated; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
 
@@ -167,6 +170,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   transition: transform 0.2s var(--ease), filter 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
 .btn svg { width: 20px; height: 20px; flex: 0 0 auto; }
+.btn-hero { min-height: 56px; font-size: 18px; }
 .btn-gold {
   background: var(--gold);
   color: var(--navy-black);
@@ -340,6 +344,8 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .tracker-card:hover { box-shadow: 0 0 0 1px rgba(247, 208, 71, 0.25); }
 .tracker-top { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .tracker-top .title { font-family: var(--font-display); font-weight: 600; font-size: 17px; }
+.tracker-top .title-link { text-decoration: underline; text-underline-offset: 4px; }
+.tracker-top .title-link:hover { color: var(--gold); }
 .tracker-top .org { color: var(--muted); font-size: 14px; }
 .tracker-top .spacer { margin-left: auto; }
 
@@ -462,8 +468,8 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   place-items: center;
 }
 .inv-row .ico svg { width: 24px; height: 24px; }
-.inv-row .what .t { font-family: var(--font-display); font-weight: 600; font-size: 16px; line-height: 1.35; }
-.inv-row .what .h { color: var(--muted); font-size: 13.5px; }
+.inv-row .what .t { display: block; font-family: var(--font-display); font-weight: 600; font-size: 16px; line-height: 1.35; }
+.inv-row .what .h { display: block; color: var(--muted); font-size: 13.5px; }
 .inv-row .trail { color: var(--muted); font-size: 13.5px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .inv-row .trail svg { width: 14px; height: 14px; flex: 0 0 auto; color: var(--muted-2); }
 .inv-row .trail .to { color: var(--risk-med); }
@@ -503,6 +509,8 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .detail-head .ico svg { width: 30px; height: 30px; }
 .detail-head h1 { font-family: var(--font-display); font-size: clamp(22px, 3.4vw, 32px); font-weight: 700; line-height: 1.3; }
 .detail-head .h { color: var(--muted); }
+
+.card-h2 { font-family: var(--font-display); font-size: 20px; margin: 8px 0 16px; }
 
 /* flow timeline */
 .flow { display: grid; gap: 0; margin-top: 10px; }
