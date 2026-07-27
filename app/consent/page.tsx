@@ -11,7 +11,7 @@ export default function ConsentPage() {
     <section className="section wrap consent-page">
       <div className="section-head">
         <div>
-          <p className="eyebrow">สาธิตความยินยอม · Consent Demo</p>
+          <p className="eyebrow">สาธิตความยินยอม</p>
           <h2>อ่านประกาศทีละข้อ แล้วเลือกเอง</h2>
         </div>
       </div>

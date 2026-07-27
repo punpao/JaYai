@@ -76,7 +76,7 @@ function CardAnalysis({ card, onScratchState }: { card: NoticeCard; onScratchSta
   const bubble = (
     <div className="bubble-row card-voice">
       <JaYai pose={card.pose} />
-      <Bubble who={`จ่าใหญ่วิเคราะห์ · ${card.chunk}`}>{card.voice}</Bubble>
+      <Bubble who={`จ่าใหญ่วิเคราะห์`}>{card.voice}</Bubble>
     </div>
   );
   if (!card.scratch) return bubble;
@@ -266,7 +266,6 @@ export default function SwipeDeck() {
             const d = decisions[c.id];
             return (
               <div key={c.id} className="summary-row">
-                <span className="s-chunk">{c.chunk}</span>
                 <span className="s-title">{c.title}</span>
                 <RiskDots risk={c.risk} />
                 <span className={`chip decision-${d}`}>
@@ -345,7 +344,6 @@ export default function SwipeDeck() {
           </div>
 
           <header className="cc-head">
-            <span className="cc-chunk">{card.chunk}</span>
             <span className={`chip ${card.mode === 'optional' ? 'mode-optional' : 'mode-locked'}`}>
               {card.mode === 'optional' ? (card.beyondCompliance ? 'เลือกได้ (เกินมาตรฐาน)' : 'เลือกได้') : 'บังคับ — รับทราบเท่านั้น'}
             </span>

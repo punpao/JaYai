@@ -34,7 +34,6 @@ function CuriosityItem({ card, index }: { card: CuriosityCard; index: number }) 
         <div className="curio-head">
           <JaYai pose={card.pose} />
           <div>
-            <span className="curio-chunk">{card.chunk}</span>
             <h3 className="curio-hook">
               <Hook card={card} />
             </h3>
